@@ -1,9 +1,10 @@
 {
   "dependencies": {
+    "express": "^4.15.2",
     "redis": "^2.7.1"
   },
   "scripts": {
-    "start": "",
+    "start": "node app.js",
     "test": "",
     "deploy": ""
   }
