@@ -5,7 +5,11 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "",
+    "test": "mocha *.spec.js",
     "deploy": ""
+  },
+  "devDependencies": {
+    "mocha": "^3.3.0",
+    "supertest": "^3.0.0"
   }
 }
