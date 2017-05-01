@@ -41,7 +41,7 @@ This goal is a _concept focus_ goal, which means that it is not specific about t
 
 You will have to choose _what to build_. The details of the project are up to you. The project can be pre-written (so long as you have permission to use it) or a new one of your own choosing. You can even choose projects from other goals.
 
-For inspiration, review the [list of project ideas][project-ideas].
+For inspiration, review the [list of project ideas](http://jsdev.learnersguild.org/project-ideas.html).
 
 The advantage of this is that you can work on whatever kind of project you like, so long as you focus on building your skills and knowledge of the concept in question.
 
@@ -121,4 +121,3 @@ An added benefit of working on a concept-focus goal is that you'll have a projec
 - Frontend Masters [Zero to Production Node.js on Amazon Web Services](https://frontendmasters.com/courses/production-node-aws/) #nodejs #aws #devops
 
 [mit-license]: https://opensource.org/licenses/MIT
-[project-ideas]: {{ site.url }}{% link project-ideas.md %}
