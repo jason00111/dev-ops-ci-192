@@ -2,31 +2,50 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const redis = require('redis')
-const client = redis.createClient()
+const redisClient = redis.createClient()
+const mustacheExpress = require('mustache-express')
 
-client.on("error", function (err) {
+function randomChar () {
+  return String.fromCharCode(Math.floor(Math.random() * (122 - 97 + 1) + 97))
+}
+
+function randomString () {
+  return randomChar() + randomChar() + randomChar() + randomChar()
+}
+
+redisClient.on("error", function (err) {
     console.log("Error " + err);
 });
-
-client.set("string key", "string val", redis.print)
-
-client.get('string key', (err, reply) => console.log('value:', reply))
 
 app.use(bodyParser.urlencoded({ extended : true }))
 
 app.use(express.static('public'))
 
+app.engine('mustache', mustacheExpress())
+
+app.set('view engine', 'mustache')
+
 app.get('/', function (req, res) {
-  res.sendFile('index.html')
+  res.render('index')
 })
 
 app.post('/save', function (req, res) {
-  console.log('req.body:', req.body)
-  res.redirect('/test')
+  let key = randomString()
+
+  redisClient.set(key, req.body.text, function (err, reply) {
+    res.redirect(`/${key}`)
+  })
 })
 
-app.get('/test', function (req, res) {
-  res.send('hello there')
+app.get(/^\/[a-z]{4}$/, function (req, res) {
+  const key = req.path.slice(1)
+  redisClient.get(key, function (err, reply) {
+    if (reply) {
+      res.render('index', {text: reply})
+    } else {
+      res.send('Not found')
+    }
+  })
 })
 
 const server = app.listen(3000, function () {
