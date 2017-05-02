@@ -29,13 +29,20 @@ app.get('/', function (req, res) {
   res.render('index')
 })
 
-app.post('/save', function (req, res) {
-  let key = randomString()
-
-  redisClient.set(key, req.body.text, function (err, reply) {
-    res.redirect(`/${key}`)
+function saveAndRedirect (req, res) {
+  const key = randomString()
+  redisClient.get(key, function (err, reply) {
+    if (reply) {
+      saveAndRedirect(req, res)
+    } else {
+      redisClient.set(key, req.body.text, function (err, reply) {
+        res.redirect(`/${key}`)
+      })
+    }
   })
-})
+}
+
+app.post('/save', saveAndRedirect)
 
 app.get(/^\/[a-z]{4}$/, function (req, res) {
   const key = req.path.slice(1)
