@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Save Text</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <form action="/save" method="post">
-      <textarea name="text" class="text-area" placeholder="put your text here" cols="50" rows="10">{{text}}</textarea>
-      <button class="save-button" type="submit">Save Text</button>
+      <textarea name="text" placeholder="put your text here" rows="10">{{text}}</textarea>
+      <button type="submit">Save Text</button>
     </form>
   </body>
 </html>
