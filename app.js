@@ -1,6 +1,16 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const redis = require('redis')
+const client = redis.createClient()
+
+client.on("error", function (err) {
+    console.log("Error " + err);
+});
+
+client.set("string key", "string val", redis.print)
+
+client.get('string key', (err, reply) => console.log('value:', reply))
 
 app.use(bodyParser.urlencoded({ extended : true }))
 
