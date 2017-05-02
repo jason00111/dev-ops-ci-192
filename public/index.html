@@ -5,8 +5,9 @@
     <title>Save Text</title>
   </head>
   <body>
-    <textarea class="text-area" placeholder="put your text here" cols="100" rows="30"></textarea>
-    <button class="save-button">Save Text</button>
-    <script src="script.js" type="text/javascript"></script>
+    <form action="/save" method="post">
+      <textarea name="text" class="text-area" placeholder="put your text here" cols="50" rows="10"></textarea>
+      <button class="save-button" type="submit">Save Text</button>
+    </form>
   </body>
 </html>
