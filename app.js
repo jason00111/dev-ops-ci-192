@@ -1,9 +1,12 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const redis = require('redis')
-const redisClient = redis.createClient()
 const mustacheExpress = require('mustache-express')
+const redis = require('redis')
+
+const redisClient = process.env.REDIS_URL
+  ? redis.createClient(process.env.REDIS_URL)
+  : redis.createClient()
 
 function randomChar () {
   return String.fromCharCode(Math.floor(Math.random() * (122 - 97 + 1) + 97))
