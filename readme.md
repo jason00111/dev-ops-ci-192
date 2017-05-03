@@ -12,3 +12,6 @@
 
 ## Live Site
 save-text.herokuapp.com
+
+## PaperTrail
+heroku addons:open papertrail

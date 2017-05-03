@@ -2,3 +2,4 @@
 [redis](https://redis.io/)
 [redis for Node](https://www.npmjs.com/package/redis)
 [Intro to Sentry](https://www.youtube.com/watch?v=D060ACRPj6I)
+[Heroku Redis](https://devcenter.heroku.com/articles/heroku-redis)
