@@ -79,7 +79,7 @@ An added benefit of working on a concept-focus goal is that you'll have a projec
   - [x] Link to logging service is included in README.
 - [ ] Production error tracking service like [Sentry](https://sentry.io/welcome/) is used.
   - [ ] Link to error tracking service is included in README.
-- [ ] Application uses a deploy hook ([Heroku's built in Deploy Hooks](https://elements.heroku.com/addons/deployhooks) is a good option) to send email or Slack message with each new deploy.
+- [x] Application uses a deploy hook ([Heroku's built in Deploy Hooks](https://elements.heroku.com/addons/deployhooks) is a good option) to send email or Slack message with each new deploy.
 - [ ] Application uses email and/or SMS messaging to alert users (for example: send welcome email on sign up).
 - [x] The best resources you find for learning testing are added to a file `resources.md`.
 - [x] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
