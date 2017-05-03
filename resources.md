@@ -3,6 +3,7 @@
 [superagent docs](http://visionmedia.github.io/superagent/)
 [redis](https://redis.io/)
 [redis for Node](https://www.npmjs.com/package/redis)
-[Intro to Sentry](https://www.youtube.com/watch?v=D060ACRPj6I)
 [Heroku Redis](https://devcenter.heroku.com/articles/heroku-redis)
 [Continuous Deployment with CircleCI and Heroku](https://www.youtube.com/watch?v=Hfs_1yuWDf4)
+[Use GitHub with Slack](https://get.slack.help/hc/en-us/articles/232289568-Use-GitHub-with-Slack)
+[Intro to Sentry](https://www.youtube.com/watch?v=D060ACRPj6I)
