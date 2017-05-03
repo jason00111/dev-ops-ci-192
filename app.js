@@ -8,9 +8,6 @@ const redisClient = process.env.REDIS_URL
   ? redis.createClient(process.env.REDIS_URL)
   : redis.createClient()
 
-console.log('!!!!!!!!!!URL?????????????', process.env.REDIS_URL)
-console.log('process.env', process.env)
-
 function randomChar () {
   return String.fromCharCode(Math.floor(Math.random() * (122 - 97 + 1) + 97))
 }
