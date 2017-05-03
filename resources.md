@@ -1,4 +1,6 @@
 [Testing Express Routes Using supertest](https://glebbahmutov.com/blog/how-to-correctly-unit-test-express-server/)
+[supertest "docs"](https://www.npmjs.com/package/supertest)
+[superagent docs](http://visionmedia.github.io/superagent/)
 [redis](https://redis.io/)
 [redis for Node](https://www.npmjs.com/package/redis)
 [Intro to Sentry](https://www.youtube.com/watch?v=D060ACRPj6I)

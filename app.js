@@ -53,7 +53,7 @@ app.get(/^\/[a-z]{4}$/, function (req, res) {
     if (reply) {
       res.render('index', {text: reply})
     } else {
-      res.send('Not found')
+      res.status(404).send('Not found')
     }
   })
 })
