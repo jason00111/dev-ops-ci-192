@@ -7,10 +7,13 @@
 - run `npm test` to run tests
 - run `npm start` to start server
 
+- heroku git:remote -a save-text
+
 ## How to Deploy
 
-- heroku git:remote -a save-text
-- `npm deploy`
+The app is automatically deployed to Heroku (through CircleCi) when you push to GitHub and the tests pass.
+
+If you want to deploy to Heroku manually, run `npm deploy`
 
 ## Live Site
 save-text.herokuapp.com
