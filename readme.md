@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/jason00111/dev-ops-ci-192.svg?style=shield)](https://circleci.com/gh/jason00111/dev-ops-ci-192)
+
 ## Setup Instructions
 
 - clone repo
