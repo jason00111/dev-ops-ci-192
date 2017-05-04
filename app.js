@@ -21,7 +21,7 @@ function randomString () {
 
 redisClient.on("error", function (err) {
     console.log("Error " + err);
-});
+})
 
 app.use(bodyParser.urlencoded({ extended : true }))
 
@@ -40,7 +40,8 @@ const msFromNow = {
   hour: 3600000,
   day: 86400000,
   week: 604800000,
-  month: 2592000000
+  month: 2592000000,
+  second: 10000
 }
 
 function saveAndRedirect (req, res) {
