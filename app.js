@@ -49,6 +49,13 @@ function saveAndRedirect (req, res) {
     if (reply) {
       saveAndRedirect(req, res)
     } else {
+      const sendEmailIndex = req.body.text.search('sendEmailTo:')
+      if (sendEmailIndex !== -1) {
+        const matches = /\S+@\S+/.exec(req.body.text.slice(sendEmailIndex + 'sendEmailTo:'.length))
+        if (matches) {
+          const email = matches[0]
+        }
+      }
       redisClient.set(key, req.body.text, function (err, reply) {
         if (req.body.time !== 'forever') {
           const expire = new Date(Date.now() + msFromNow[req.body.time])
