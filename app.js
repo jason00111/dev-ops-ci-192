@@ -33,6 +33,14 @@ app.get('/', function (req, res) {
   res.render('index')
 })
 
+const msFromNow = {
+  minute: 600000,
+  hour: 3600000,
+  day: 86400000,
+  week: 604800000,
+  month: 2592000000
+}
+
 function saveAndRedirect (req, res) {
   const key = randomString()
   redisClient.get(key, function (err, reply) {
@@ -40,7 +48,14 @@ function saveAndRedirect (req, res) {
       saveAndRedirect(req, res)
     } else {
       redisClient.set(key, req.body.text, function (err, reply) {
-        res.redirect(`/${key}`)
+        if (req.body.time !== 'forever') {
+          const expire = new Date(Date.now() + msFromNow[req.body.time])
+          redisClient.set(`${key}:time`, expire.valueOf(), function (err, reply) {
+            res.redirect(`/${key}`)
+          })
+        } else {
+          res.redirect(`/${key}`)
+        }
       })
     }
   })
