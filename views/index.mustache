@@ -8,6 +8,15 @@
   <body>
     <form action="/save" method="post">
       <textarea name="text" placeholder="put your text here" rows="10">{{text}}</textarea>
+      <label>Save for</label>
+      <select name="time">
+        <option value="forever" selected>Forever</option>
+        <option value="minute">10 Minutes</option>
+        <option value="hour">1 Hour</option>
+        <option value="day">1 Day</option>
+        <option value="week">1 Week</option>
+        <option value="month">1 Month</option>
+      </select>
       <button type="submit">Save Text</button>
     </form>
   </body>
