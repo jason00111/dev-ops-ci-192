@@ -10,7 +10,9 @@ const redisClient = process.env.REDIS_URL
   : redis.createClient()
 
 function randomChar () {
-  return String.fromCharCode(Math.floor(Math.random() * (122 - 97 + 1) + 97))
+  const aCharCode = 97
+  const zCharCode = 122
+  return String.fromCharCode(Math.floor(Math.random() * (zCharCode - aCharCode + 1) + aCharCode))
 }
 
 function randomString () {
