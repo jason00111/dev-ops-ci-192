@@ -6,6 +6,7 @@ const mustacheExpress = require('mustache-express')
 const redis = require('redis')
 const sgHelper = require('sendgrid').mail
 const sendGrid = require('sendgrid')(process.env.SENDGRID_API_KEY)
+const Raven = require('raven')
 
 const redisClient = process.env.REDIS_URL
   ? redis.createClient(process.env.REDIS_URL)
@@ -24,6 +25,10 @@ function randomString () {
 redisClient.on("error", function (err) {
     console.log("Error " + err);
 })
+
+Raven.config('__DSN__').install()
+
+app.use(Raven.requestHandler())
 
 app.use(bodyParser.urlencoded({ extended : true }))
 
@@ -106,6 +111,8 @@ app.get(/^\/[a-z]{4}$/, function (req, res) {
     }
   })
 })
+
+app.use(Raven.errorHandler())
 
 const port = process.env.PORT || 3000
 
