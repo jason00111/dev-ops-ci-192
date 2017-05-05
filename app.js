@@ -26,7 +26,7 @@ redisClient.on("error", function (err) {
     console.log("Error " + err);
 })
 
-Raven.config('__DSN__').install()
+Raven.config('https://5d07237c965b4928b0b4bfea885ae361:40fb5b435916496eba931b5132647407@sentry.io/165449').install()
 
 app.use(Raven.requestHandler())
 
