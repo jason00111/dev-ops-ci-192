@@ -77,8 +77,8 @@ An added benefit of working on a concept-focus goal is that you'll have a projec
 - [x] Production logging service like [PaperTrail](https://papertrailapp.com/) is used.
   - [x] Production app logs at least 3 key events to logging service.
   - [x] Link to logging service is included in README.
-- [ ] Production error tracking service like [Sentry](https://sentry.io/welcome/) is used.
-  - [ ] Link to error tracking service is included in README.
+- [x] Production error tracking service like [Sentry](https://sentry.io/welcome/) is used.
+  - [x] Link to error tracking service is included in README.
 - [x] Application uses a deploy hook ([Heroku's built in Deploy Hooks](https://elements.heroku.com/addons/deployhooks) is a good option) to send email or Slack message with each new deploy.
 - [x] Application uses email and/or SMS messaging to alert users (for example: send welcome email on sign up).
 - [x] The best resources you find for learning testing are added to a file `resources.md`.
