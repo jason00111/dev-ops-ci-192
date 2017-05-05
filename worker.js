@@ -1,4 +1,7 @@
 const redis = require('redis')
+const Raven = require('raven')
+
+Raven.config('https://5d07237c965b4928b0b4bfea885ae361:40fb5b435916496eba931b5132647407@sentry.io/165449').install()
 
 const redisClient = process.env.REDIS_URL
   ? redis.createClient(process.env.REDIS_URL)
@@ -6,6 +9,7 @@ const redisClient = process.env.REDIS_URL
 
 redisClient.on("error", function (err) {
     console.log("Error " + err);
+    Raven.captureException(err)
 })
 
 redisClient.keys('*:time', function (err1, keys) {
