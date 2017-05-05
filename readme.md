@@ -7,19 +7,21 @@
 - run `npm test` to run tests
 - run `npm start` to start server
 
-- heroku git:remote -a save-text
-
 ## How to Deploy
 
 The app is automatically deployed to Heroku (through CircleCi) when you push to GitHub and the tests pass.
 
-If you want to deploy to Heroku manually, run `npm deploy`
+This app is configured to send an email and a slack message when it is deployed.
+
+If you want to deploy to Heroku manually
+- run `heroku git:remote -a save-text` (on time only)
+- run `npm deploy`
 
 ## Live Site
-save-text.herokuapp.com
+[save-text.herokuapp.com](https://save-text.herokuapp.com/)
 
 ## PaperTrail
-heroku addons:open papertrail
+go to https://papertrailapp.com/events and login or run `heroku addons:open papertrail`
 
 ## New Relic (Monitoring Service)
 go to https://newrelic.com/ and login to see dashboard
