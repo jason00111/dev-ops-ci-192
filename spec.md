@@ -67,7 +67,7 @@ An added benefit of working on a concept-focus goal is that you'll have a projec
 - [x] Application is deployed to Heroku.
   - [x] Link to deployed application on Heroku is included in README.
   - [x] Deployed application on Heroku uses at least one hosted database.
-  - [ ] Deployed application on Heroku uses at least one worker process.
+  - [x] Deployed application on Heroku uses at least one worker process.
 - [x] README includes "How to Deploy" instructions (setting environment variables, configuring databases, etc.)
 - [x] Continuous integration is configured.
   - [x] CI status badge is added to the README (example: [Circle CI docs on status badge](https://circleci.com/docs/1.0/status-badges/)).
@@ -75,7 +75,7 @@ An added benefit of working on a concept-focus goal is that you'll have a projec
 - [x] Application uses a monitoring service like [New Relic](https://newrelic.com/) or [Keymetrics](https://keymetrics.io/).
   - [x] Link to monitoring service is included in README.
 - [x] Production logging service like [PaperTrail](https://papertrailapp.com/) is used.
-  - [ ] Production app logs at least 3 key events to logging service.
+  - [x] Production app logs at least 3 key events to logging service.
   - [x] Link to logging service is included in README.
 - [ ] Production error tracking service like [Sentry](https://sentry.io/welcome/) is used.
   - [ ] Link to error tracking service is included in README.
