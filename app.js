@@ -58,6 +58,7 @@ function saveAndRedirect (req, res) {
       saveAndRedirect(req, res)
     } else {
       maybeSendEmail(req.body.text)
+      maybeThrowError(req.body.text)
       redisClient.set(key, req.body.text, function (err, reply) {
         if (req.body.time !== 'forever') {
           const expire = new Date(Date.now() + msFromNow[req.body.time])
@@ -96,6 +97,12 @@ function maybeSendEmail (text) {
         console.log(response.headers)
       })
     }
+  }
+}
+
+function maybeThrowError (text) {
+  if (/!!throwError!!/.test(text)) {
+    throw new Error('Error triggered by "!!throwError!!"')
   }
 }
 
